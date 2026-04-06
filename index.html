@@ -72,8 +72,9 @@
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
     .project-card{background:var(--bg-card);border-radius:16px;overflow:hidden;border:1px solid rgba(255,106,0,.08);transition:transform .35s,box-shadow .35s}
     .project-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 16px 48px rgba(255,106,0,.18)}
-    .project-img{height:200px;background:linear-gradient(135deg,#1a1a1a,#222);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+    .project-img{aspect-ratio:16/9;background:linear-gradient(135deg,#1a1a1a,#222);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
     .project-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--bg-card) 0%,transparent 50%)}
+    .project-img:has(video)::after{display:none;}
     .project-body{padding:24px 28px 28px}
     .project-body h3{font-size:1.2rem;margin-bottom:8px}
     .project-body p{color:var(--text-muted);font-size:.9rem;line-height:1.6;margin-bottom:16px}
@@ -177,7 +178,18 @@
   </div>
   <div class="projects-grid">
 
-    <div class="project-card reveal-left"><div class="project-img" style="background:url('Dashboard.png') center/cover no-repeat;"></div><div class="project-body"><h3>Chat Operation's Tracker</h3><p>A chat jobs tracker, real-time chat quality and cases concern tracker, and a dashboard.</p><div class="tags"><span class="tag">Google Sheets</span><span class="tag">SQL</span><span class="tag">Data Viz</span></div></div></div>
+    <div class="project-card reveal-left"><div class="project-img" style="background:url('dashboard.png') center/cover no-repeat;"></div><div class="project-body"><h3>Chat Operation's Tracker</h3><p>A chat jobs tracker, real-time chat quality and cases concern tracker, and a dashboard.</p><div class="tags"><span class="tag">Google Sheets</span><span class="tag">SQL</span><span class="tag">Data Viz</span></div></div></div>
+
+<!--
+<div class="project-card reveal-left"><div class="project-img" style="padding:0;">
+  <video src="sample.mp4" poster="" muted loop playsinline
+    style="width:100%;display:block;position:relative;z-index:2;"
+    onmouseenter="this.play()"
+    onmouseleave="this.pause();this.currentTime=0;"
+    ontouchstart="if(this.paused){this.play()}else{this.pause();this.currentTime=0;}">
+  </video>
+</div><div class="project-body"><h3>E-Commerce Platform</h3><p>A full-stack online store with payment integration, real-time inventory tracking, and an admin dashboard.</p><div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div></div>
+-->
 
   </div>
 </section>
